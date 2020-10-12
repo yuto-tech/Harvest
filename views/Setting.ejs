@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harvest</title>
+  <link rel="stylesheet" href="../stylesheets/common.css">
+  <link rel="stylesheet" href="../stylesheets/Setting.css">
+  <script src="https://kit.fontawesome.com/207448519a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="headerInner">
+       <a href="/" class="he logo">Harvest</a>
+       <div class="he foo01" >
+           <a href="/" class="cho choice re-choice">応援する</a>
+           <a href="/support" class="cho choice re-choice">支援中</a>
+           <a class="choice1 re-choice">支援してもらう</a>
+       </div>
+       <div class="he header-right">
+       <a href="/login" id="" title="ログイン" class="login">ログイン</a>
+       <span>/</span>
+       <a href="/login" id="" title="新規会員登録" class="login">新規会員登録</a>
+       </div>
+    </div>
+  </header>
+  <nav>
+  </nav>
+  <main>
+  <form method="POST" action="/fand"　enctype="multipart/form-data">
+  <div class="main-title">
+    <div class="border-only">
+      <div class="pre-images">
+        <img id="preview">
+      </div>
+      <div class="main-images">
+        <label for="upload">
+        <span class='title-images'>
+          <i class="far fa-image"></i>
+          サムネイルを投稿する
+        </span>
+        <input name="image" type="file" class="filesend" id="upload" onchange="previewImage(this);">
+        </label>
+        <script>
+        function previewImage(obj)
+        {
+          var fileReader = new FileReader();
+          fileReader.onload = (() => {
+            document.getElementById('preview').src = fileReader.result;
+          });
+          fileReader.readAsDataURL(obj.files[0]);
+        }
+          </script>
+      </div>
+    </div>
+  </div>
+
+   <div class="target">
+    <input type="text" class="title" size="56" name="title" placeholder="タイトルを入力してください">
+    <div class="flex-2item">
+     <div class="support">
+       <h3>目標視聴数(千単位)</h3>
+       <input type="number" max="10000" min="1" name="sumview"> k
+     </div>
+     <div class="days-left">
+       <h3>募集日数（日）</h3>
+       <input type="number" max="14" min="1" name="giveweek"> days
+     </div>
+     <div class="shere">
+      <a href="https://www.facebook.com/share.php?u=[URLを挿入]" rel="nofollow" target="_blank">
+      　<img src="../images/facebook-icon.png" class="fa">
+      </a>
+      <a href="http://twitter.com/share?text=【ツイート文（日本語が含まれる場合にはURLエンコードが必要）】&url=【共有するURL】&hashtags=#Harvest" rel="nofollow">
+        <img src="../images/Twitter-icon.png" class="fa">
+      </a>
+     </div>
+    </div>
+   </div>
+
+   <div class="middle-images">
+    <div class="midlle-zone">
+        <div class="pre-images02">
+          <img id="middlepreview">
+        </div>
+        <div class="face-images">
+          <label for="middleicon">
+            <span class="face">
+              <i class="far fa-user-circle"></i>
+            画像を挿入する
+            </span>
+            <input type="file" name="send00" class="send02" id="middleicon" onchange="previewimage(this);">
+          </label>
+           <script>
+           function previewimage(obj){
+             var fileReader = new FileReader();
+             fileReader.onload = (() => {
+               document.getElementById('middlepreview').src = fileReader.result;
+               });
+               fileReader.readAsDataURL(obj.files[0]);
+               }
+           </script>
+        </div>
+      </div>
+      <div class="images-text">
+         <textarea class="balloon-line" name="explanation"  cols="80" rows="15" placeholder="説明文を書いてください(1200文字以下)"></textarea>
+      </div>
+      
+   </div>
+
+   <div class="fot">
+   <div class="desition">
+     <input type="submit" value="投稿する" class="desition-button">
+   </div>
+  </form>
+  </main>
+  <aside>
+      <img src="../images/pics5.jpeg" class="Advertisement"> 
+  </aside>
+  <footer></footer>
+</body>
+</html>

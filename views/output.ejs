@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harvest</title>
+  <link rel="stylesheet" href="../stylesheets/common.css">
+  <link rel="stylesheet" href="../stylesheets/output.css">
+  <script src="https://kit.fontawesome.com/207448519a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="headerInner">
+       <a href="/" class="he logo">Harvest</a>
+       <div class="he foo01" >
+           <a href="/" class="cho choice">応援する</a>
+           <a href="./support.ejs" class="cho choice">支援中</a>
+           <a href="./Setting.ejs" class=" choice">支援してもらう</a>
+       </div>
+       <div class="he header-right">
+       <a href="/login" id="" title="ログイン" class="login">ログイン</a>
+       <span>/</span>
+       <a href="/login" id="" title="新規会員登録" class="login">新規会員登録</a>
+       </div>
+    </div>
+  </header>
+  <nav>
+  </nav>
+  <main>
+  <div class="main-title">
+    <div class="border-only">
+      <div class="pre-images">
+        <img id="preview">
+      </div>
+      <div class="main-images">
+        <label for="thum">
+        <span class='title-images'>
+        </span>
+        <input name="image" type="file" class="filesend" id="thum" onchange="previewImage(this);">
+        </label>
+      </div>
+    </div>
+  </div>
+
+   <div class="target">
+    <div class="title"><%= fands.title %></div>
+    <div class="flex-2item">
+     <div class="support">
+      <div class="target-box">
+       <h3>視聴回数 : </h3>
+       <p>foo</p>
+      </div>
+       <div class="target-box">
+       <h5>目標視聴数(千単位) :  <%= fands.sumview %> </h5>
+        k
+      </div>
+     </div>
+     <div class="days-left">
+      <div class="target-box">
+       <h3>残り日数 : </h3>
+       <p>foo</p>
+      </div>
+       <div class="target-box01">
+       <h5>募集日数(日) :  <%= fands.giveweek %> </h5>
+        days
+      </div>
+     </div>
+     <div class="shere">
+      <a href="http://www.facebook.com/share.php?u=http://localhost:8000//output/<%=fands.titleID%>" rel="nofollow" target="_blank">
+      　<img src="../images/facebook-icon.png" class="fa">
+      </a>
+      <a href="http://twitter.com/share?&url=http://localhost:8000//output/<%=fands.titleID%>&hashtags=#Harvest" rel="nofollow" target="_blank">
+        <img src="../images/Twitter-icon.png" class="fa">
+      </a>
+     </div>
+    </div>
+   </div>
+
+   <div class="middle-images">
+    <div class="midlle-zone">
+        <div class="pre-images02">
+          <img id="middlepreview">
+        </div>
+        <div class="face-images">
+          <label for="middleicon">
+            <span class="face">
+            </span>
+            <input type="file" name="send00" class="send02" id="middleicon" onchange="previewimage(this);">
+          </label>
+        </div>
+      </div>
+      <div class="images-text">
+         <div class="balloon-line"><%= fands.explanation %></div>
+      </div>
+   </div>
+  <div class="fot">
+    <div class="desition">
+    <div id="app">
+       <p id="counter">0</p>
+       <button type="button" id="increment">+1</button>
+    </div>
+      <input type="submit" value="支援する" class="desition-button">
+    </div>
+  </div>
+  <div class="comment-room">コメント欄</div>
+  </main>
+  <aside>
+    <div class="Advertisement">広告欄</div>
+  </aside>
+  <footer></footer>
+  <script>
+   const state = { count: 0 };
+   const btn = document.getElementById('increment');
+   btn.addEventListener('click', () => {
+     const counter = document.getElementById('counter');
+     counter.innerHTML = ++state.count;
+    });
+    </script>
+</body>
+</html>

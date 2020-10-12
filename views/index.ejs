@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Harvest</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/common.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://kit.fontawesome.com/207448519a.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+  <header>
+     <div class="headerInner">
+        <div class="he logo">Harvest</div>
+        <div class="he foo01" >
+            <a class="cho choice1 re-choice">応援する</a>
+            <a href="/support" class="cho choice re-choice">支援中</a>
+            <a href="/fand/Setting" class="choice re-choice">支援してもらう</a>
+        </div>
+        <div class="he header-right">
+        <a href="/login" id="" title="ログイン" class="login">ログイン</a>
+        <span>/</span>
+        <a href="/login" id="" title="新規会員登録" class="login">新規会員登録</a>
+        </div>
+     </div>
+  </header>
+
+<div class="container">
+  <aside class="side">
+      <nav>
+        <ul>
+          <div class="genre"><i class="fas fa-search"></i>検索</div></a>
+          <form  method="POST" action="">
+            <li><input type="search" class="side-button container-2" id="search" placeholder="キーワードを入力"></li>
+            <div class="genre">ジャンルで検索</div>
+            <li class="option-list">
+              <a href="#" class="search-option" value="サンプル1">社会貢献</a>
+              <a href="#" class="search-option" value="サンプル2">病気</a>
+              <a href="#" class="search-option" value="サンプル3">エンタメ</a>
+              <a href="#" class="search-option" value="サンプル4">ビジネス</a>
+              <a href="#" class="search-option" value="サンプル5">その他</a>
+              
+            </li>
+          </form>
+        </li>
+        </ul>
+      </nav>
+      <div class="side-footer">
+        side footer
+      </div>
+  </aside>
+  <main>
+    <div class="swiper-container" >
+      <div class="swiper-wrapper">
+        <a class="swiper-slide" href="#">
+          <img src="../images/pics4.jpg" alt="" class="swiper-img" >
+          <div class="swiper-box">
+            <h3 class="swiper-title">猫でもパンケーキが食べたい！！</h3>
+            <div class="swiper-top">             
+              <img src="../images/pics1.jpg" class="swiper-icon">
+              <div class="swiper-bottom">
+                <div class="swiper-user">neko</div>
+                <div class="swiper-view">支援 10万回/残り 7日</div>
+              </div>
+            </div>
+            <div class="swiper-ex" >猫だってパンケーキ食べたいに決まっている。私はパンケーキが大好き。
+              <br>そして愛猫のポムのことも大好き。ポムが美味しく食べれるパンケーキを作りたい！</div>
+          </div>
+        </a>
+        <a class="swiper-slide" href="#">
+          <img src="../images/pics4.jpg" alt="" class="swiper-img" >
+          <div class="swiper-box">
+            <h3 class="swiper-title">猫でもパンケーキが食べたい！！</h3>
+            <div class="swiper-top">             
+              <img src="../images/pics1.jpg" class="swiper-icon">
+              <div class="swiper-bottom">
+                <div class="swiper-user">neko</div>
+                <div class="swiper-view">支援 10万回/残り 7日</div>
+              </div>
+            </div>
+            <div class="swiper-ex" >猫だってパンケーキ食べたいに決まっている。私はパンケーキが大好き。
+              <br>そして愛猫のポムのことも大好き。ポムが美味しく食べれるパンケーキを作りたい！</div>
+          </div>
+        </a>
+        <a class="swiper-slide" href="#">
+          <img src="../images/pics4.jpg" alt="" class="swiper-img" >
+          <div class="swiper-box">
+            <h3 class="swiper-title">猫でもパンケーキが食べたい！！</h3>
+            <div class="swiper-top">             
+              <img src="../images/pics1.jpg" class="swiper-icon">
+              <div class="swiper-bottom">
+                <div class="swiper-user">neko</div>
+                <div class="swiper-view">支援 10万回/残り 7日</div>
+              </div>
+            </div>
+            <div class="swiper-ex" >猫だってパンケーキ食べたいに決まっている。私はパンケーキが大好き。
+              <br>そして愛猫のポムのことも大好き。ポムが美味しく食べれるパンケーキを作りたい！</div>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-scrollbar"></div>
+   </div>
+   
+   <div class="boxes">
+      <% fands.forEach((fand) => { %>
+      <a class="box" href='/output/<%=fand.titleID%>'>
+        <img class="box-thumbnail" src ="../images/pics2.jpg">
+        <div class="separate">
+          <div class="box-top">
+            <img src="../images/pics1.jpg" class="box-icon">
+          </div>
+          <div class="box-bottom">
+            <div class="box-title"><%= fand.title %></div>
+            <div class="user-name"><%= fand.userId%></div>
+            <div class="total-view">支援 10万回/残り 7日</div>
+          </div> 
+        </div>
+      </a>  
+      <% }); %> 
+    </div>
+  </main>
+</div>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> 
+  <script>
+    const appendNumber = 4;
+    const prependNumber = 1;
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 10,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    document.querySelector('.prepend-2-slides').addEventListener('click', (e) => {
+      e.preventDefault();
+      swiper.prependSlide([
+        '<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>',
+        '<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>'
+      ]);
+    });
+    document.querySelector('.prepend-slide').addEventListener('click', function (e) {
+      e.preventDefault();
+      swiper.prependSlide('<div class="swiper-slide">Slide ' + (--prependNumber) + '</div>');
+    });
+    document.querySelector('.append-slide').addEventListener('click', function (e) {
+      e.preventDefault();
+      swiper.appendSlide('<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>');
+    });
+    document.querySelector('.append-2-slides').addEventListener('click', function (e) {
+      e.preventDefault();
+      swiper.appendSlide([
+        '<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>',
+        '<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>'
+      ]);
+    });
+  </script>
+  </body>
+</html>

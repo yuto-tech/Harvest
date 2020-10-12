@@ -1,0 +1,235 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+      "...... ...... ...... ...... ......"
+      "header header header header header" 
+      "...... ...... ...... ...... ......"
+      "center center center ...... right " 180%
+      "...... ...... ...... ...... ......"
+      /  250px auto 1fr auto 360px ;
+}
+header {
+  grid-area: header;
+}
+main {
+  grid-area: center;
+  margin: 20px;
+}
+nav {
+  grid-area: left;
+  background-color:#f5f5f5;
+}
+aside {
+  grid-area: right;
+  background-color:#f5f5f5;
+}
+footer {
+  grid-area: footer;
+  background-color: chocolate;
+}
+
+.logo{
+  color: #434a54;
+}
+
+.main-title{
+  text-align: center;
+}
+
+.main-title{
+  width: 100%;
+  height: 590px;
+}
+
+input{
+  outline: none;
+}
+
+
+.title{
+  margin-bottom: 20px ;
+  font-size: 24px;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.filesend{
+  display: none;
+}
+
+
+.main-images{
+  height: 560px;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.title-images{
+  font-size: 16px;
+  color: whitesmoke;
+  height: 200px;
+  margin: auto;
+  opacity: 1;
+  line-height: 570px;
+}
+
+.pre-images{
+  z-index: 0;
+  position: absolute;
+  object-fit: contain;
+  width: 1040px;
+}
+
+.pre-images img{
+  width: 100%;
+  height: 560px;
+}
+
+.target{
+  display: flex;
+  flex-direction: column;
+  height: 140px;
+  color: rgba(0, 0, 0, 84);
+  border-bottom: 1px solid #e3e4e8;
+}
+
+.twitter-share-button{
+  border-radius:50%;
+}
+
+.fa{
+  height: 40px;
+  margin-right: 6px;
+}
+
+.middle-images{
+  padding-top: 100px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.face-images{
+  height: 153px;
+  width: 153px;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+}
+
+.flex-2item{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.balloon-line {
+  position: relative; /* 三角の位置を固定するために設定 */
+  width: 600px;
+  height: 300px;
+  margin: 0 auto 40px; /* 上 左右 下のマージン */
+  padding: 20px; /* ふきだし内の余白 */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.send02{
+  display: none;
+}
+
+.face{
+  line-height: 150px;
+  margin-left: 10px;
+  opacity: 1;
+  color: whitesmoke;
+  font-weight: 300;
+}
+
+.pre-images02{
+  z-index: 0;
+  position: absolute;
+  object-fit: contain;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #d3d3d3;
+}
+
+
+.pre-images02 img{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+textarea{
+  resize: none;
+  border-style: none;
+  outline: none;
+  border:solid 2px #d3d3d3;
+}
+
+.fand-explanation{
+  width: 100%;
+}
+
+.yourname{
+  margin-top: 40px;
+}
+
+.desition{
+  text-align: center;
+}
+
+.fot{
+  height: 160px;
+}
+
+.desition-button{
+  background-color: tomato;
+  color: white;
+  width: 160px;
+  height: 50px;
+  border-radius: 30px;
+  border-style: none;
+  font-size: 20px;
+}
+
+.support{
+  margin-left: 20px;
+}
+
+.fa-user-circle{
+  align-items: center;
+}
+
+.Advertisement{
+  height: 240px;
+  background-color: springgreen;
+  padding: 10px;
+}
+
+.comment-room{
+  height: 49%;
+  background-color:#f5f5f5;
+  padding-top: 10px;
+}
+
+.target-box{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.target-box01{
+  display: flex;
+  justify-content: space-between;
+}
