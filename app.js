@@ -51,8 +51,9 @@ passport.use(new GitHubStrategy({
       User.upsert({
         userId: profile.id,
         username: profile.username,
+        image_name: `${profile.id}.jpg`
       }).then(() => {
-        done(null, profile);
+        done(null, profile); 
       });
     });
   }
@@ -60,10 +61,13 @@ passport.use(new GitHubStrategy({
 
 var indexRouter = require('./routes/index');
 var photosRouter = require('./routes/photos');
-var fandRouter = require(`./routes/fand`);
+var fandRouter = require('./routes/fand');
 var serverStatus = require('./routes/server-status');
 var loginRouter = require('./routes/login');
 var logoutRouter = require('./routes/logout');
+var UploadRouter = require('./routes/upload');
+
+const { permittedCrossDomainPolicies } = require('helmet');
 
 var app = express();
 app.use(helmet());
@@ -77,6 +81,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 app.use(session({ secret: 'c1ea430a07a96954', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
@@ -89,6 +94,7 @@ app.use('/fand', fandRouter);
 app.use('/server-status', serverStatus);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
+app.use('/upload', UploadRouter);
 
 app.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email'] }),

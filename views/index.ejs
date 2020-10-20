@@ -108,15 +108,15 @@
    
    <div class="boxes">
       <% fands.forEach((fand) => { %>
-      <a class="box" href='/output/<%=fand.titleID%>'>
+      <a class="box" href='/output/<%= fand.titleID %>'>
         <img class="box-thumbnail" src ="../images/pics2.jpg">
         <div class="separate">
           <div class="box-top">
-            <img src="../images/pics1.jpg" class="box-icon">
+           <img src='../<%= fand.user.image_name %>' class="box-icon">
           </div>
           <div class="box-bottom">
             <div class="box-title"><%= fand.title %></div>
-            <div class="user-name"><%= fand.userId%></div>
+            <div class="user-name"><%= fand.user.username %></div>
             <div class="total-view">支援 10万回/残り 7日</div>
           </div> 
         </div>

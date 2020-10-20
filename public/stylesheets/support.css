@@ -35,6 +35,9 @@ footer {
   background-color: chocolate;
 }
 
+.logo{
+  color: #434a54;
+}
 
 .swiper-wrapper{
   padding-top: 20px;
@@ -51,6 +54,27 @@ footer {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.filesend{
+  display: none;
+}
+
+.far{
+  color: #030303;
+  font-size: 20px;
+}
+
+.far:hover{
+  color: #4b535e;
+}
+
+.desition-buttons{
+  background-color: #434a54;
+  color: white;
+  border-radius: 8px;
+  border-style: none;
+  width: 40px;
 }
 
 .swiper-box{
@@ -101,6 +125,8 @@ footer {
 
 .user-icon00{
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .user-icon01{
@@ -110,10 +136,13 @@ footer {
   object-fit: cover;
   margin-top: 10px;
   border: 1px solid #dfdddb;
+  display: flex;
+  flex-direction: column;
 }
 
 .username{
   text-align: center;
+  font-size: 20px;
 }
 
 .user-text{

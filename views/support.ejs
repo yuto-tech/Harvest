@@ -5,13 +5,14 @@
   <link rel="stylesheet" href="../stylesheets/common.css">
   <link rel="stylesheet" href="../stylesheets/support.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/207448519a.js" crossorigin="anonymous"></script>
   <title>Harvest</title>
   
 </head>
 <body>
   <header>
     <div class="headerInner">
-       <div class="he logo">Harvest</div>
+      <a href="/" class="he logo">Harvest</a>
        <div class="he foo01" >
            <a href="/" class="cho choice re-choice">応援する</a>
            <a class="cho choice1 re-choice">支援中</a>
@@ -26,16 +27,22 @@
  </header>
  <nav>
     <div class="user-profile">
-      <div class="user-icon00">
-        <img src= '<%= users.image_name %>' class="user-icon01">
+      <div class="user-icon00"> 
+        <form method="POST" enctype="multipart/form-data" action="/upload">
+          <img src= '../<%= users.image_name %>' class="user-icon01">
+          <label for="filesend"><i class="far fa-image"></i>
+          <input type="file" name="file" class="filesend" id="filesend">
+          </label>
+          <input type="submit" value="更新" class="desition-buttons">
+        </form>
       </div>
-      <div class="username"><%= users.userId %></div>
+      <div class="username"><%= users.username %></div>
         <div class="user-text">
           <div class="sum">
-            <h3 class="sum00">合計</h3>
+            <h4 class="sum00">合計</h4>
             <div class="sum01">
-              <div>ランク</div>
-              <div>支援回数</div>
+              <h5>ランク</h5>
+              <h5>支援回数</h5>
             </div>
             <div class="sum02">
                <h3>１位</h3>
@@ -43,10 +50,10 @@
             </div>
         </div>
        <div class="weekly">
-           <h3 class="sum00">今月</h3>
+           <h4 class="sum00">今月</h4>
            <div class="sum01">
-             <div >ランク</div>
-             <div>支援回数</div>
+             <h5>ランク</h5>
+             <h5>支援回数</h5>
            </div>
            <div class="sum02">
              <h3>１位</h3>

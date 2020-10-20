@@ -10,13 +10,13 @@ router.get('/', (req, res, next) => {
   Fanding.findAll({
     include: [{
         model: User,
-        required: true
+        required: true,
       }],   
     attributes: ['title','titleID','updatedat','createdBy'],
     order: [['updatedat','DESC']]
   }).then((fands) => {
     res.render('index', {
-      fands, user: req.user
+      fands
     });
   });
 });
@@ -36,16 +36,11 @@ router.get('/output/:titleID', (req, res, next) => {
 
 router.get('/support', (req, res, next) => {
   if(req.user){
-    User.findOne({
-      where: {
-        userId: 65909608
-      }
-    }),
-    res.render(`/support/${userId}`);
+    const userId = req.user.id;
+    res.redirect(`/support/${userId}`);
   }else{
     res.render('login', { user: req.user });
   }
-  
 });
 
 router.get('/support/:userId',(req, res, next) => {
@@ -53,11 +48,10 @@ router.get('/support/:userId',(req, res, next) => {
     where: {
       userId:req.params.userId
     },
-    attributes: ['userId','username'],
+    attributes: ['userId','username','image_name'],
   }).then((users) => {
     res.render('support', { users });
   });
-
 });
 
 
