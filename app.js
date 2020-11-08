@@ -24,9 +24,16 @@ var passport = require('passport');
 // モデルの読み込み
 var User = require('./models/user');
 var fanding = require('./models/fanding');
+var Counter = require('./models/view-counter');
 User.sync().then(() => {
   fanding.belongsTo(User, {foreignKey: 'createdBy'});
   fanding.sync();
+  fanding.belongsTo(Counter, {foreignKey: 'titleID'});
+  fanding.sync();
+  Counter.belongsTo(User, {foreignKey: 'userId'});
+  Counter.sync();
+  Counter.belongsTo(fanding, {foreignKey: 'titleID'});
+  Counter.sync();
 });
 
 var GitHubStrategy = require('passport-github2').Strategy;
@@ -66,6 +73,7 @@ var serverStatus = require('./routes/server-status');
 var loginRouter = require('./routes/login');
 var logoutRouter = require('./routes/logout');
 var UploadRouter = require('./routes/upload');
+var CountRouter = require('./routes/View-count');
 
 const { permittedCrossDomainPolicies } = require('helmet');
 
@@ -82,6 +90,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 app.use(session({ secret: 'c1ea430a07a96954', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
@@ -95,6 +104,7 @@ app.use('/server-status', serverStatus);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/upload', UploadRouter);
+app.use('/View-count', CountRouter);
 
 app.get('/auth/github',
   passport.authenticate('github', { scope: ['user:email'] }),

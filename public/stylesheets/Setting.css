@@ -124,9 +124,6 @@ footer {
   height: 153px;
   width: 153px;
   opacity: 0;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  border-radius: 50%;
 }
 
 .flex-2item{
@@ -162,15 +159,6 @@ footer {
   border-top-color: #fff; /* 吹き出しの背景色と同じ色 */
   bottom: -27px;
   background-color: slateblue;
-}
-
-.face-images:hover{
-  background-color: rgb(104, 103, 103);
-  opacity: 0.7;
-}
-
-.send02{
-  display: none;
 }
 
 .face{

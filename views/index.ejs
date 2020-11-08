@@ -17,7 +17,7 @@
         <div class="he foo01" >
             <a class="cho choice1 re-choice">応援する</a>
             <a href="/support" class="cho choice re-choice">支援中</a>
-            <a href="/fand/Setting" class="choice re-choice">支援してもらう</a>
+            <a href="/Setting" class="choice re-choice">支援してもらう</a>
         </div>
         <div class="he header-right">
         <a href="/login" id="" title="ログイン" class="login">ログイン</a>
@@ -47,9 +47,6 @@
         </li>
         </ul>
       </nav>
-      <div class="side-footer">
-        side footer
-      </div>
   </aside>
   <main>
     <div class="swiper-container" >
@@ -109,7 +106,7 @@
    <div class="boxes">
       <% fands.forEach((fand) => { %>
       <a class="box" href='/output/<%= fand.titleID %>'>
-        <img class="box-thumbnail" src ="../images/pics2.jpg">
+        <img class="box-thumbnail" src ='../<%= fand.titleID %>.jpg'>
         <div class="separate">
           <div class="box-top">
            <img src='../<%= fand.user.image_name %>' class="box-icon">
@@ -117,7 +114,12 @@
           <div class="box-bottom">
             <div class="box-title"><%= fand.title %></div>
             <div class="user-name"><%= fand.user.username %></div>
-            <div class="total-view">支援 10万回/残り 7日</div>
+            <div class="total-view">支援 
+            <%const target = counts.find((choice)=>{ %>
+            <% return choice.titleID === fand.titleID%>
+            <%});%>
+            <%console.log(target.countName);%>
+              <%= target.countName ;%>回/公開日 <%=fand.updatedat%></div>
           </div> 
         </div>
       </a>  

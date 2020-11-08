@@ -27,19 +27,19 @@
   <nav>
   </nav>
   <main>
-  <form method="POST" action="/fand"　enctype="multipart/form-data">
+  <form method="POST" action="/fand" enctype="multipart/form-data">
   <div class="main-title">
     <div class="border-only">
       <div class="pre-images">
         <img id="preview">
       </div>
       <div class="main-images">
-        <label for="upload">
+        <label for="filesend">
         <span class='title-images'>
           <i class="far fa-image"></i>
           サムネイルを投稿する
         </span>
-        <input name="image" type="file" class="filesend" id="upload" onchange="previewImage(this);">
+        <input type="file" class="filesend" name="uploaded_file" id="filesend" onchange="previewImage(this);">
         </label>
         <script>
         function previewImage(obj)
@@ -80,25 +80,7 @@
    <div class="middle-images">
     <div class="midlle-zone">
         <div class="pre-images02">
-          <img id="middlepreview">
-        </div>
-        <div class="face-images">
-          <label for="middleicon">
-            <span class="face">
-              <i class="far fa-user-circle"></i>
-            画像を挿入する
-            </span>
-            <input type="file" name="send00" class="send02" id="middleicon" onchange="previewimage(this);">
-          </label>
-           <script>
-           function previewimage(obj){
-             var fileReader = new FileReader();
-             fileReader.onload = (() => {
-               document.getElementById('middlepreview').src = fileReader.result;
-               });
-               fileReader.readAsDataURL(obj.files[0]);
-               }
-           </script>
+          <img src= '../<%= users.image_name %>'>
         </div>
       </div>
       <div class="images-text">

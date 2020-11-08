@@ -4,7 +4,7 @@ const Sequelize = loader.Sequelize;
 
 const Fanding = loader.database.define('fand', {
   titleID: {
-    type: Sequelize.UUID,
+    type: Sequelize.STRING,
     primaryKey: true,
     allowNull: false
   },
@@ -21,10 +21,6 @@ const Fanding = loader.database.define('fand', {
     allowNull: false
   },
   giveweek: {
-    type: Sequelize.INTEGER,
-    allowNull: false
-  },
-  send00:{
     type: Sequelize.INTEGER,
     allowNull: false
   },

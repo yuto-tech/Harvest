@@ -14,8 +14,8 @@
        <a href="/" class="he logo">Harvest</a>
        <div class="he foo01" >
            <a href="/" class="cho choice">応援する</a>
-           <a href="./support.ejs" class="cho choice">支援中</a>
-           <a href="./Setting.ejs" class=" choice">支援してもらう</a>
+           <a href="/support" class="cho choice">支援中</a>
+           <a href="/Setting" class=" choice">支援してもらう</a>
        </div>
        <div class="he header-right">
        <a href="/login" id="" title="ログイン" class="login">ログイン</a>
@@ -30,14 +30,7 @@
   <div class="main-title">
     <div class="border-only">
       <div class="pre-images">
-        <img id="preview">
-      </div>
-      <div class="main-images">
-        <label for="thum">
-        <span class='title-images'>
-        </span>
-        <input name="image" type="file" class="filesend" id="thum" onchange="previewImage(this);">
-        </label>
+        <img src='../<%= fands.titleID %>.jpg'>
       </div>
     </div>
   </div>
@@ -47,26 +40,29 @@
     <div class="flex-2item">
      <div class="support">
       <div class="target-box">
-       <h3>視聴回数 : </h3>
-       <p>foo</p>
+      <h4>視聴回数 :
+          <%console.log(counts[0].countName);%>
+          <%= counts[0].countName ;%>
+      </h4>
       </div>
        <div class="target-box">
-       <h5>目標視聴数(千単位) :  <%= fands.sumview %> </h5>
-        k
+       <h5>目標視聴数 :  <%= fands.sumview %>k</h5>
       </div>
      </div>
      <div class="days-left">
       <div class="target-box">
-       <h3>残り日数 : </h3>
-       <p>foo</p>
+       <h4>終了日:
+         <% const date = new Date(fands.updatedat); %>
+         <% date.setDate(date.getDate() + fands.giveweek); %>
+         <%= date.toLocaleDateString();%>
+        </h4>
       </div>
        <div class="target-box01">
-       <h5>募集日数(日) :  <%= fands.giveweek %> </h5>
-        days
+       <h5>公開日 :  <%= fands.updatedat %></h5>
       </div>
      </div>
      <div class="shere">
-      <a href="http://www.facebook.com/share.php?u=http://localhost:8000//output/<%=fands.titleID%>" rel="nofollow" target="_blank">
+      <a href="http://www.facebook.com/share.url=http://localhost:8000//output/<%=fands.titleID%>" rel="nofollow" target="_blank">
       　<img src="../images/facebook-icon.png" class="fa">
       </a>
       <a href="http://twitter.com/share?&url=http://localhost:8000//output/<%=fands.titleID%>&hashtags=#Harvest" rel="nofollow" target="_blank">
@@ -79,14 +75,7 @@
    <div class="middle-images">
     <div class="midlle-zone">
         <div class="pre-images02">
-          <img id="middlepreview">
-        </div>
-        <div class="face-images">
-          <label for="middleicon">
-            <span class="face">
-            </span>
-            <input type="file" name="send00" class="send02" id="middleicon" onchange="previewimage(this);">
-          </label>
+          <img src= '../<%= fands.user.image_name %>'>
         </div>
       </div>
       <div class="images-text">
@@ -95,26 +84,45 @@
    </div>
   <div class="fot">
     <div class="desition">
-    <div id="app">
-       <p id="counter">0</p>
-       <button type="button" id="increment">+1</button>
-    </div>
-      <input type="submit" value="支援する" class="desition-button">
+    <form method="POST" action="/View-count" >
+      <input type=hidden value='<%= fands.titleID %>' name="hidden">
+      <input type="submit" value="支援する" class="desition-button" id="js-show-popup">
+    </form>
     </div>
   </div>
   <div class="comment-room">コメント欄</div>
+  <div class="popup" id="js-popup">
+    <div class="popup-inner">
+      <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
+      <a href="#"><img src="../images/pics1.jpg" alt="ポップアップ画像"></a>
+    </div>
+    <div class="black-background" id="js-black-bg"></div>
+  </div>
   </main>
   <aside>
-    <div class="Advertisement">広告欄</div>
+    <img src="../images/pics5.jpeg" class="Advertisement"> 
   </aside>
   <footer></footer>
   <script>
-   const state = { count: 0 };
-   const btn = document.getElementById('increment');
-   btn.addEventListener('click', () => {
-     const counter = document.getElementById('counter');
-     counter.innerHTML = ++state.count;
-    });
-    </script>
+
+    function popupImage() {
+      const popup = document.getElementById('js-popup');
+      if(!popup) return;
+      const blackBg = document.getElementById('js-black-bg');
+      const closeBtn = document.getElementById('js-close-btn');
+      const showBtn = document.getElementById('js-show-popup');
+    
+      closePopUp(blackBg);
+      closePopUp(closeBtn);
+      closePopUp(showBtn);
+      function closePopUp(elem) {
+        if(!elem) return;
+        elem.addEventListener('click', () => {
+          popup.classList.toggle('is-show');
+        });
+      }
+    }
+    popupImage();
+  </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 'use strict';
-const path = require('path')
+const path = require('path');
 const express = require('express');
 const router = express.Router();
 const { where } = require('sequelize');
@@ -14,9 +14,6 @@ const storage = multer.diskStorage({
   }
 });
 const upload = multer({ storage: storage });
-
-
-router.get('/', (req, res) => res.sendFile(path.join(__dirname, 'uploads')));	
 
 router.post('/', upload.single('file'), (req, res, next) => {
   console.log('アップロードしたファイル名： ' + req.file.originalname);
