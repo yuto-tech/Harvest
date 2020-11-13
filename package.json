@@ -7,6 +7,7 @@
     "test": "node_modules/mocha/bin/mocha --timeout 10000"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "^2.5.9",
@@ -20,6 +21,7 @@
     "passport-github2": "0.1.9",
     "pg": "7.4.1",
     "pg-hstore": "2.3.2",
+    "request": "^2.88.2",
     "sequelize": "4.33.4",
     "uuid": "3.3.2"
   },
