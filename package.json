@@ -33,6 +33,6 @@
     "webpack-cli": "^3.3.12"
   },
   "engines": {
-    "node": "~10.14.2"
+    "node": "~10.x"
   }
 }
