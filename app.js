@@ -28,12 +28,12 @@ var Counter = require('./models/view-counter');
 User.sync().then(() => {
   fanding.belongsTo(User, {foreignKey: 'createdBy'});
   fanding.sync();
-  fanding.belongsTo(Counter, {foreignKey: 'titleID'});
-  fanding.sync();
   Counter.belongsTo(User, {foreignKey: 'userId'});
   Counter.sync();
-  Counter.belongsTo(fanding, {foreignKey: 'titleID'});
-  Counter.sync();
+  Fanding.sync().then(() => {
+    Counter.belongsTo(fanding, {foreignKey: 'titleID'});
+    Counter.sync();
+  });
 });
 
 var GitHubStrategy = require('passport-github2').Strategy;
