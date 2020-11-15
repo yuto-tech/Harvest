@@ -34,7 +34,12 @@ User.sync().then(() => {
     Counter.belongsTo(fanding, {foreignKey: 'titleID'});
     Counter.sync();
   });
+  Counter.sync().then(() => {
+    fanding.belongsTo(Counter, {foreignKey: 'titleID'});
+  fanding.sync();
+  });
 });
+
 
 var GitHubStrategy = require('passport-github2').Strategy;
 var GITHUB_CLIENT_ID = GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID ||'6e8a80efee03d585041f';
