@@ -4,7 +4,7 @@ const Sequelize = loader.Sequelize;
 
 const Counter = loader.database.define('counter', {
   viewID: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     primaryKey: true,
     allowNull: false
   },

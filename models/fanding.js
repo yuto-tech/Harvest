@@ -13,7 +13,7 @@ const Fanding = loader.database.define('fand', {
     allowNull: false
   },
   image: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     allowNull: false
   },
   sumview: {

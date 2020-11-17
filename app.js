@@ -30,7 +30,7 @@ User.sync().then(() => {
   fanding.sync();
   Counter.belongsTo(User, {foreignKey: 'userId'});
   Counter.sync();
-  Fanding.sync().then(() => {
+  fanding.sync().then(() => {
     Counter.belongsTo(fanding, {foreignKey: 'titleID'});
     Counter.sync();
   });
