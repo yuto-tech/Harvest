@@ -73,7 +73,7 @@
    </div>
 
    <div class="middle-images">
-    <div class="midlle-zone">
+      <div class="midlle-zone">
         <div class="pre-images02">
           <img src= '../<%= fands.user.image_name %>'>
         </div>
@@ -82,14 +82,16 @@
          <div class="balloon-line"><%= fands.explanation %></div>
       </div>
    </div>
+
   <div class="fot">
     <div class="desition">
     <form method="POST" action="/View-count" >
-      <input type=hidden value='<%= fands.titleID %>' name="hidden">
+      <input type="hidden" value='<%= fands.titleID %>' name="hidden">
       <input type="submit" value="支援する" class="desition-button" id="js-show-popup">
     </form>
     </div>
   </div>
+  
   <div class="comment-room">コメント欄</div>
   <div class="popup" id="js-popup">
     <div class="popup-inner">

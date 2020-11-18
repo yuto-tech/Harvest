@@ -9,14 +9,14 @@ body {
       "...... ...... ...... ...... ......"
       "center center center ...... right " 100%
       "...... ...... ...... ...... ......"
-      /  250px auto 1fr auto 360px ;
+      /  20% auto 1fr auto 24% ;
 }
 header {
   grid-area: header;
 }
 main {
   grid-area: center;
-  margin: 20px;
+  margin: 2%;
 }
 nav {
   grid-area: left;
@@ -46,7 +46,7 @@ footer {
 
 .title{
   border:solid 2px #d3d3d3;
-  margin-bottom: 20px ;
+  margin-bottom: 2% ;
   font-size: 24px;
   height: 40px;
   width: 100%;
@@ -88,7 +88,7 @@ footer {
   z-index: 0;
   position: absolute;
   object-fit: contain;
-  width: 1040px;
+  width: 73%;
 }
 
 .pre-images img{
@@ -114,10 +114,16 @@ footer {
 }
 
 .middle-images{
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding-top: 10%;
+  padding-bottom: 5%;
   display: flex;
   justify-content: space-around;
+}
+
+.midlle-zone{
+  width: 30%;
+  display: flex;
+  justify-content: center;
 }
 
 .face-images{
@@ -134,31 +140,18 @@ footer {
 
 .balloon-line {
   position: relative; /* 三角の位置を固定するために設定 */
-  width: 600px;
+  width: 84%;
   margin: 0 auto 40px; /* 上 左右 下のマージン */
   padding: 20px; /* ふきだし内の余白 */
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
 }
-.balloon-line::before,
-.balloon-line::after { /* 三角 */
-  content: '';
-  border: 14px solid transparent;
-  position: absolute;
-  left: 50%;
-  margin-left: -14px;
-  background-color: slateblue;
-}
-.balloon-line::before { /* 線になる部分 */
-  border-top-color: #ddd; /* 吹き出しの線の色と同じ色 */
-  bottom: -28px;
-  background-color: slateblue;
-}
-.balloon-line::after { /* 地の部分 */
-  border-top-color: #fff; /* 吹き出しの背景色と同じ色 */
-  bottom: -27px;
-  background-color: slateblue;
+
+.images-text{
+  width: 70%;
+  display: flex;
+  justify-content: center;
 }
 
 .face{

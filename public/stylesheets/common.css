@@ -30,7 +30,7 @@ header{
   flex: auto;
   justify-content:space-between;
   flex-wrap: wrap;
-  padding:16px 0 16px 70px;
+  padding:16px 0 16px 4%;
   text-align: center;
   font-weight: 300;
 }
