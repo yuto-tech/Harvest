@@ -31,7 +31,7 @@
         <form method="POST" enctype="multipart/form-data" action="/upload">
           <img src= '../<%= users.image_name %>' class="user-icon01">
           <label for="filesend"><i class="far fa-image"></i>
-          <input type="file" name="file" class="filesend" id="filesend">
+          <input type="file" name="file" class="filesend" id="filesend" required>
           </label>
           <input type="submit" value="更新" class="desition-buttons">
         </form>
