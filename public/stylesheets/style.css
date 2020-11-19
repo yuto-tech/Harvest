@@ -144,29 +144,14 @@ nav{
   display: flex;
   justify-content: space-around;
   color: black;
-
-  /* Center slide text vertically 
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;*/
 }
 
-/* 前ページ、次ページボタン共通のスタイル */
 .swiper-button-prev,
 .swiper-button-next {
   outline: none;
-  background-image: none; /* デフォルトのボタン画像を消す */
-  width: 28px; /* ボタンの幅 */
-  height: 86px; /* ボタンの高さ */
+  background-image: none;
+  width: 28px;
+  height: 86px;
   margin-top: -43px; /* 縦中央配置用：ボタンの高さの半分のネガティブマージン（top:50%がすでに設定されている） */
 }
 
@@ -174,15 +159,15 @@ nav{
   font-family: "Font Awesome 5 Free";
   font-weight: 1000;
   content: "\f137";
-  color: tomato; /* 色を白に */  
-  margin-left: 30px; /* マージンを追加 */
+  color: tomato;  
+  margin-left: 30px;
 }
 
 .swiper-button-next:after{
   font-family: "Font Awesome 5 Free";
   font-weight: 1000;
   content: "\f137";
-  color: tomato; /* 色を白に */  
+  color: tomato;
 }
 
 .box-thumbnail{

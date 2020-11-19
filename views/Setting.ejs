@@ -39,7 +39,7 @@
           <i class="far fa-image"></i>
           サムネイルを投稿する
         </span>
-        <input type="file" class="filesend" name="uploaded_file" id="filesend" onchange="previewImage(this);">
+        <input type="file" class="filesend" name="uploaded_file" id="filesend" required onchange="previewImage(this);">
         </label>
         <script>
         function previewImage(obj)
@@ -56,15 +56,15 @@
   </div>
 
    <div class="target">
-    <input type="text" class="title" size="56" name="title" placeholder="タイトルを入力してください">
+    <input type="text" class="title" size="56" name="title" required placeholder="タイトルを入力してください">
     <div class="flex-2item">
      <div class="support">
        <h3>目標視聴数(千単位)</h3>
-       <input type="number" max="10000" min="1" name="sumview"> k
+       <input type="number" max="10000" min="1" name="sumview" required> k
      </div>
      <div class="days-left">
        <h3>募集日数（日）</h3>
-       <input type="number" max="14" min="1" name="giveweek"> days
+       <input type="number" max="14" min="1" name="giveweek" required> days
      </div>
      <div class="shere">
       　<img src="../images/facebook-icon.png" class="fa" title="投稿後にシェアできます">
@@ -80,9 +80,8 @@
         </div>
       </div>
       <div class="images-text">
-         <textarea class="balloon-line" name="explanation"  cols="80" rows="15" placeholder="説明文を書いてください(1200文字以下)"></textarea>
+         <textarea class="balloon-line" name="explanation"  cols="80" rows="15" required placeholder="説明文を書いてください(1200文字以下)"></textarea>
       </div>
-      
    </div>
 
    <div class="fot">
