@@ -31,7 +31,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get('/output/:titleID', (req, res, next) => {
+router.get('/output/:titleID', authenticationEnsurer, (req, res, next) => {
   Fanding.findOne({
     include: [{
       model: User,

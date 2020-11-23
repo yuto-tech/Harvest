@@ -7,12 +7,17 @@ const User = require('../models/user');
 const Counter = require('../models/view-counter');
 const uuid = require('uuid');
 
-router.post('/', authenticationEnsurer, (req,res,next) => {
+router.post('/', (req,res,next) => {
   const viewID = uuid.v4();
+  const titleID = req.body.hidden;
   Counter.create({
     viewID,
     userId: req.user.id,
-    titleID: req.body.hidden
+    titleID
+  }).then(()=>{
+    setTimeout(function() {
+      res.redirect(`output/${titleID}`);
+    }, 3000);
   });
 });
 
