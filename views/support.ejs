@@ -70,28 +70,6 @@
  <main>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <% for(var i=0 ;i< 10 ;i++) { %>
-        <a class="swiper-slide" href='/output/<%= counts[i]['fand.titleID'] %>'>
-          <img src='../<%= counts[i]['fand.titleID'] %>.jpg' alt="" class="swiper-img" >
-          <div class="swiper-box">
-            <h3 class="swiper-title"><%= counts[i]['fand.title'] %></h3>
-            <div class="swiper-top">             
-              <img src='../<%= counts[i]['fand.user.image_name'] %>' class="swiper-icon">
-              <div class="swiper-bottom">
-                <div class="swiper-user"><%= counts[i]['fand.user.username'] %></div>
-                <div class="swiper-view">    
-                  <%//const target = counts.find((choice)=>{ %>
-                  <%// return choice.titleID === counts.titleID%>
-                  <%//});%>
-                  <%//console.log(target.countName);%>
-                  <%= //target.countName ;%>10回/公開日 <%= counts[i]['fand.updatedat']%></div>
-                </div>
-              </div>
-            <div class="swiper-ex" ><%=counts[i]['fand.explanation']%></div>
-          </div>
-        </a>
-      <% }; %>
-      
       <a class="swiper-slide" href="#">
         <img src="../images/pics4.jpg" alt="" class="swiper-img" >
         <div class="swiper-box">
