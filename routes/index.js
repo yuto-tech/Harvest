@@ -75,7 +75,24 @@ router.get('/support/:userId',(req, res, next) => {
     },
     attributes: ['userId','username','image_name'],
   }).then((users) => {
-    res.render('support', { users });
+      Counter.findAll({
+        include: [{
+          model: Fanding,
+          required: true,
+          include: [{
+            model: User,
+            required: true,
+          }],
+        }],
+        raw: true,
+        where:{
+          userId:req.params.userId
+        },
+    }).then((counts)=>{
+      console.log(counts.length);
+      console.log(counts[0]["fand.title"]);
+        res.render('support', { users,counts });
+      });
   });
 });
 

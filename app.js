@@ -44,6 +44,9 @@ User.sync().then(() => {
 var GitHubStrategy = require('passport-github2').Strategy;
 var GITHUB_CLIENT_ID = GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID ||'6e8a80efee03d585041f';
 var GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET ||'a89e919243f71e3319129a9f2318bcf5c4f69905';
+var FacebookStrategy = require('passport-facebook').Strategy;
+var FACEBOOK_APP_ID = '289723422397327';
+var FACEBOOK_APP_SECRET = 'f66fd919eefb925b83c656b0efbd84d1';
 
 passport.serializeUser(function (user, done) {
   done(null, user);
@@ -63,6 +66,24 @@ passport.use(new GitHubStrategy({
       User.upsert({
         userId: profile.id,
         username: profile.username,
+        image_name: `${profile.id}.jpg`
+      }).then(() => {
+        done(null, profile); 
+      });
+    });
+  }
+));
+
+passport.use(new FacebookStrategy({
+  clientID: FACEBOOK_APP_ID,
+  clientSecret: FACEBOOK_APP_SECRET,
+  callbackURL: process.env.HEROKU_URL ? process.env.HEROKU_URL + '/auth/facebook/callback':'http://localhost:8000/auth/facebook/callback' 
+},
+  function (accessToken, refreshToken, profile, done) {
+    process.nextTick(function () {
+      User.upsert({
+        userId: profile.id,
+        username: profile.displayName,
         image_name: `${profile.id}.jpg`
       }).then(() => {
         done(null, profile); 
@@ -130,6 +151,18 @@ app.get('/auth/github/callback',
       res.redirect('/');
     }
 });
+
+app.get('/auth/facebook',
+  passport.authenticate('facebook')
+);
+//localhost:8000/auth/facebook/callbackにGETアクセスした時に処理が行われる設定
+app.get('/auth/facebook/callback',
+　//処理が失敗した時のリダイレクト先の設定
+  passport.authenticate('facebook', {failureRedirect: '/login' }),
+  function(req, res) {
+    //処理が成功した時のリダイレクト先の設定
+    res.redirect('/');
+  });
 
 app.get('/Setting', (req, res) => {
   res.render('Setting.ejs');
