@@ -74,10 +74,37 @@ router.get('/support/:userId',(req, res, next) => {
       userId:req.params.userId
     },
     attributes: ['userId','username','image_name'],
-  }).then((users)=>{
-        res.render('support', { users, });
-      });
+  }).then((users) => {
+      Counter.findAll({
+        include: [{
+          model: Fanding,
+          required: true,
+          include: [{
+            model: User,
+            required: true,
+          }],
+        }],
+        raw: true,
+        where:{
+          userId:req.params.userId
+        },
+    }).then((counts)=>{
+      Counter.findAll({
+        raw: true,
+        attributes: [
+          'titleID',
+          [Counter.sequelize.fn('count', Counter.sequelize.col('titleID')), 'countName']
+        ],
+        group:'titleID'
+      }).then((fands)=>{
+        console.log(counts.length);
+        console.log(counts[0]["fand.title"]);
+        console.log(fands[0]);
+          res.render('support', { users,counts,fands });
+        });
+    });
   });
+});
 
 router.get('/Setting', authenticationEnsurer, (req, res, next) => {
   User.findOne({

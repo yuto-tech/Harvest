@@ -70,54 +70,29 @@
  <main>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <a class="swiper-slide" href="#">
-        <img src="../images/pics4.jpg" alt="" class="swiper-img" >
-        <div class="swiper-box">
-          <h3 class="swiper-title">猫でもパンケーキが食べたい！！</h3>
-          <div class="swiper-top">             
-            <img src="../images/pics1.jpg" class="swiper-icon">
-            <div class="swiper-bottom">
-              <div class="swiper-user">neko</div>
-              <div class="swiper-view">支援 10万回/残り 7日</div>
-            </div>
+      <% for(let i=0 ;i< 10 ;i++) { %>
+        <a class="swiper-slide" href='/output/<%= counts[i]['fand.titleID'] %>'>
+          <img src='../<%= counts[i]['fand.titleID'] %>.jpg' alt="" class="swiper-img" >
+          <div class="swiper-box">
+            <h3 class="swiper-title"><%= counts[i]['fand.title'] %></h3>
+            <div class="swiper-top">             
+              <img src='../<%= counts[i]['fand.user.image_name'] %>' class="swiper-icon">
+              <div class="swiper-bottom">
+                <div class="swiper-user"><%= counts[i]['fand.user.username'] %></div>
+                <div class="swiper-view">    
+                  <%const target = fands.find((choice)=>{ %>
+                  <%return choice.titleID === counts[i]['fand.titleID']%>
+                  <%});%>
+                  <%console.log(target.countName);%>
+                  <%= target.countName ;%>回/公開日 <%= counts[i]['fand.updatedat']%></div>
+                </div>
+              </div>
+            <div class="swiper-ex" ><%=counts[i]['fand.explanation']%></div>
           </div>
-          <div class="swiper-ex" >猫だってパンケーキ食べたいに決まっている。私はパンケーキが大好き。
-            <br>そして愛猫のポムのことも大好き。ポムが美味しく食べれるパンケーキを作りたい！</div>
-        </div>
-      </a>
-      <a class="swiper-slide" href="#">
-        <img src="../images/pics4.jpg" alt="" class="swiper-img" >
-        <div class="swiper-box">
-          <h3 class="swiper-title">猫でもパンケーキが食べたい！！</h3>
-          <div class="swiper-top">             
-            <img src="../images/pics1.jpg" class="swiper-icon">
-            <div class="swiper-bottom">
-              <div class="swiper-user">neko</div>
-              <div class="swiper-view">支援 10万回/残り 7日</div>
-            </div>
-          </div>
-          <div class="swiper-ex" >猫だってパンケーキ食べたいに決まっている。私はパンケーキが大好き。
-            <br>そして愛猫のポムのことも大好き。ポムが美味しく食べれるパンケーキを作りたい！</div>
-        </div>
-      </a>
-      <a class="swiper-slide" href="#">
-        <img src="../images/pics4.jpg" alt="" class="swiper-img" >
-        <div class="swiper-box">
-          <h3 class="swiper-title">猫でもパンケーキが食べたい！！</h3>
-          <div class="swiper-top">             
-            <img src="../images/pics1.jpg" class="swiper-icon">
-            <div class="swiper-bottom">
-              <div class="swiper-user">neko</div>
-              <div class="swiper-view">支援 10万回/残り 7日</div>
-            </div>
-          </div>
-          <div class="swiper-ex" >猫だってパンケーキ食べたいに決まっている。私はパンケーキが大好き。
-            <br>そして愛猫のポムのことも大好き。ポムが美味しく食べれるパンケーキを作りたい！</div>
-        </div>
-      </a>
+        </a>
+      <% }; %>
     </div>
  </main>
  <aside></aside>
-  
 </body>
 </html>
