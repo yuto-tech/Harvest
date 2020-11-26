@@ -84,7 +84,6 @@ router.get('/support/:userId',(req, res, next) => {
             required: true,
           }],
         }],
-        raw: true,
         where:{
           userId:req.params.userId
         },
@@ -97,7 +96,8 @@ router.get('/support/:userId',(req, res, next) => {
         ],
         group:'titleID'
       }).then((fands) =>{
-        console.log(counts);
+        console.log(counts[0].viewID);
+        console.log(counts[0].fand.title);
           res.render('support', { users,counts,fands });
         });
     });
