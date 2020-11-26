@@ -96,10 +96,7 @@ router.get('/support/:userId',(req, res, next) => {
           [Counter.sequelize.fn('count', Counter.sequelize.col('titleID')), 'countName']
         ],
         group:'titleID'
-      }).then((fands)=>{
-        console.log(counts.length);
-        console.log(counts[0]["fand.title"]);
-        console.log(fands[0]);
+      }).then((fands) =>{
           res.render('support', { users,counts,fands });
         });
     });
