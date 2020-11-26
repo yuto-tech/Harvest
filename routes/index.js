@@ -97,6 +97,7 @@ router.get('/support/:userId',(req, res, next) => {
         ],
         group:'titleID'
       }).then((fands) =>{
+        console.log(counts[0]["fand.title"]);
           res.render('support', { users,counts,fands });
         });
     });
