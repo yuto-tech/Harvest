@@ -52,6 +52,7 @@ router.get('/output/:titleID', authenticationEnsurer, (req, res, next) => {
         },
         group:'titleID'
       }).then((counts)=>{
+        console.log(counts[0]);
         console.log(counts[0].titleID);
         res.render('output', {fands,counts});
       });
