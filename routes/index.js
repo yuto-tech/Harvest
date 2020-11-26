@@ -52,8 +52,7 @@ router.get('/output/:titleID', authenticationEnsurer, (req, res, next) => {
         },
         group:'titleID'
       }).then((counts)=>{
-        console.log(counts[0]);
-        console.log(counts[0].titleID);
+        console.log(counts);
         res.render('output', {fands,counts});
       });
   });
@@ -97,7 +96,7 @@ router.get('/support/:userId',(req, res, next) => {
         ],
         group:'titleID'
       }).then((fands) =>{
-        console.log(counts[0].viewID);
+        console.log(counts[0]);
         console.log(counts[0].fand.title);
           res.render('support', { users,counts,fands });
         });
