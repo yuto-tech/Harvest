@@ -106,7 +106,6 @@ const { permittedCrossDomainPolicies } = require('helmet');
 var app = express();
 app.use(helmet());
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -160,7 +159,6 @@ app.get('/auth/facebook/callback',
 　//処理が失敗した時のリダイレクト先の設定
   passport.authenticate('facebook', {failureRedirect: '/login' }),
   function(req, res) {
-    //処理が成功した時のリダイレクト先の設定
     res.redirect('/');
   });
 
@@ -180,18 +178,16 @@ app.get('/practice', (req, res) => {
   res.render('practice.ejs');
 });
 
-// catch 404 and forward to error handler
+// リクエストエラー
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// サーバエラー
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });

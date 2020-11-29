@@ -68,9 +68,9 @@
  </nav>
 
  <main>
+   <!--output.jsで「支援する」を押したものを表示-->
   <div class="swiper-container">
     <div class="swiper-wrapper">
-
       <% counts.forEach((count) => { %>
         <a class="swiper-slide" href='/output/<%= count.fand.titleID %>'>
           <img src='../<%= count.fand.titleID %>.jpg' alt="" class="swiper-img" >
