@@ -22,7 +22,7 @@ var passport = require('passport');
 
 
 // モデルの読み込み
-var appConfig = require('./appConfig');
+//var appConfig = require('./appConfig');
 var User = require('./models/user');
 var fanding = require('./models/fanding');
 var Counter = require('./models/view-counter');
