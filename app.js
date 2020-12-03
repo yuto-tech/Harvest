@@ -22,7 +22,7 @@ var passport = require('passport');
 
 
 // モデルの読み込み
-//var appConfig = require('./appConfig');
+var appConfig = require('./appConfig');
 var User = require('./models/user');
 var fanding = require('./models/fanding');
 var Counter = require('./models/view-counter');
@@ -117,7 +117,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
-app.use(session({ secret: 'c1ea430a07a96954', resave: false, saveUninitialized: false }));
+app.use(session({ secret: appConfig.session.secret, resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 
