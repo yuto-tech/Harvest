@@ -41,7 +41,6 @@ User.sync().then(() => {
   });
 });
 
-
 var GitHubStrategy = require('passport-github2').Strategy;
 var GITHUB_CLIENT_ID = GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID ||appConfig.github.id;
 var GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET ||appConfig.github.secret;
@@ -118,10 +117,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
-app.use(session({ secret: appConfig.session.secret, resave: false, saveUninitialized: false }));
+app.use(session({ secret: 'c1ea430a07a96954', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 app.use('/', indexRouter);
 app.use('/photos', photosRouter);
@@ -192,6 +190,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 module.exports = app;
