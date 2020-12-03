@@ -22,6 +22,7 @@ var passport = require('passport');
 
 
 // モデルの読み込み
+var appConfig = require('./appConfig');
 var User = require('./models/user');
 var fanding = require('./models/fanding');
 var Counter = require('./models/view-counter');
@@ -42,11 +43,11 @@ User.sync().then(() => {
 
 
 var GitHubStrategy = require('passport-github2').Strategy;
-var GITHUB_CLIENT_ID = GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID ||'6e8a80efee03d585041f';
-var GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET ||'a89e919243f71e3319129a9f2318bcf5c4f69905';
+var GITHUB_CLIENT_ID = GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID ||appConfig.github.id;
+var GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET ||appConfig.github.secret;
 var FacebookStrategy = require('passport-facebook').Strategy;
-var FACEBOOK_APP_ID = '289723422397327';
-var FACEBOOK_APP_SECRET = 'f66fd919eefb925b83c656b0efbd84d1';
+var FACEBOOK_APP_ID = appConfig.facebook.id;
+var FACEBOOK_APP_SECRET = appConfig.facebook.secret;
 
 passport.serializeUser(function (user, done) {
   done(null, user);
@@ -117,7 +118,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
-app.use(session({ secret: 'c1ea430a07a96954', resave: false, saveUninitialized: false }));
+app.use(session({ secret: appConfig.session.secret, resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -1,1 +1,4 @@
-.DS_Store
+除外させる
+/appConfig.js
+
+node_modules/
