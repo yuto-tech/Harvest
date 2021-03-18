@@ -1,4 +1,4 @@
-main{
+main {
   flex: auto;
   height: auto;
   flex: 6;
@@ -9,27 +9,27 @@ main{
   width: 80%;
 }
 
-.search-top{
+.search-top {
   align-items: center;
 }
 
-aside{
+aside {
   height: auto;
   flex: 1;
   padding-top: 30px;
   width: 20%;
 }
 
-.side{
+.side {
   display: flex;
   flex-direction: column;
 }
 
-nav{
+nav {
   padding-left: 10px;
 }
 
-.side-button{
+.side-button {
   color: #434a54;
   height: 40px;
   padding: 10px 10px;
@@ -39,34 +39,34 @@ nav{
   border-radius: 14px;
 }
 
-.side-button i{
+.side-button i {
   width: 34px;
   margin-left: 16px;
 }
 
-.side-button:hover{
+.side-button:hover {
   color: red;
-  background-color: rgb(239,239,239);
+  background-color: rgb(239, 239, 239);
   opacity: 0.8;
 }
 
-.side-footer{
+.side-footer {
   height: 300px;
   margin-top: auto;
   background-color: red;
 }
 
-.container{
+.container {
   display: flex;
   min-height: 100vh;
 }
 
-.main-top{
+.main-top {
   height: 300px;
   /*background-color: #ffc562;*/
 }
 
-.boxes{
+.boxes {
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -74,15 +74,15 @@ nav{
   padding: 10px;
 }
 
-.box{
-  width: 32% ;
+.box {
+  width: 32%;
   height: 340px;
   color: black;
   margin-top: 10px;
 }
 
-.box-bottom{
-  display:flex;
+.box-bottom {
+  display: flex;
   flex-direction: column;
   font-size: 14px;
   margin-top: 14px;
@@ -94,11 +94,11 @@ nav{
   margin: 20px 0;
 }
 
-.swiper-wrapper{
+.swiper-wrapper {
   padding-top: 20px;
 }
 
-.swiper-img{
+.swiper-img {
   height: 280px;
   width: 36%;
   object-fit: cover;
@@ -106,33 +106,33 @@ nav{
   padding-right: 1%;
 }
 
-.swiper-icon{
+.swiper-icon {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.swiper-box{
-  display:flex;
+.swiper-box {
+  display: flex;
   flex-direction: column;
   margin-top: 14px;
 }
 
-.swiper-top{
+.swiper-top {
   display: flex;
   justify-content: flex-start;
   padding-top: 10px;
 }
 
-.swiper-bottom{
+.swiper-bottom {
   display: flex;
   flex-direction: column;
   font-size: 16px;
   padding-left: 10px;
 }
 
-.swiper-ex{
+.swiper-ex {
   padding-top: 20px;
   font-size: 18px;
   width: 90%;
@@ -155,22 +155,22 @@ nav{
   margin-top: -43px; /* 縦中央配置用：ボタンの高さの半分のネガティブマージン（top:50%がすでに設定されている） */
 }
 
-.swiper-button-prev:after{
+.swiper-button-prev:after {
   font-family: "Font Awesome 5 Free";
   font-weight: 1000;
   content: "\f137";
-  color: tomato;  
+  color: tomato;
   margin-left: 30px;
 }
 
-.swiper-button-next:after{
+.swiper-button-next:after {
   font-family: "Font Awesome 5 Free";
   font-weight: 1000;
   content: "\f137";
   color: tomato;
 }
 
-.box-thumbnail{
+.box-thumbnail {
   display: flex;
   flex-direction: column;
   height: 65%;
@@ -178,25 +178,24 @@ nav{
   width: 100%;
 }
 
-.box-title{
+.box-title {
   margin-top: 6px;
   font-size: 16px;
 }
 
-
-.box-top{
+.box-top {
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
   width: 110px;
 }
 
-.box-bottom{
+.box-bottom {
   width: 260px;
   margin-top: 6px;
 }
 
-.box-icon{
+.box-icon {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -204,28 +203,27 @@ nav{
   margin-top: 10px;
 }
 
-.separate{
+.separate {
   display: flex;
   justify-content: flex-start;
 }
 
-.user-name{
+.user-name {
   margin-top: 6px;
 }
 
-.option-list{
+.option-list {
   border: 1px solid #e3e4e8;
 }
 
-
-.container-2{
+.container-2 {
   color: red;
   font-size: 16px;
   border: 1px solid #e3e4e8;
   margin-bottom: 20px;
 }
 
-.search-option{
+.search-option {
   display: block;
   color: #434a54;
   font-size: 18px;
@@ -234,14 +232,13 @@ nav{
   padding-left: 10px;
 }
 
-.search-option:hover{
+.search-option:hover {
   color: red;
-  background-color: rgb(239,239,239);
+  background-color: rgb(239, 239, 239);
   opacity: 0.8;
 }
 
-
-select{
+select {
   outline: none;
   height: 40px;
   font-size: 14px;
@@ -250,6 +247,6 @@ select{
   border: 1px solid #e3e4e8;
 }
 
-.genre{
-  color:#434a54;
+.genre {
+  color: #434a54;
 }

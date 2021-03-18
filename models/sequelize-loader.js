@@ -1,12 +1,14 @@
-'use strict';
-const Sequelize = require('sequelize');
+"use strict";
+const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
-  process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost/web_app',
+  process.env.DATABASE_URL || "postgres://postgres:postgres@localhost/web_app",
   {
-    operatorsAliases: false
-  });
+    operatorsAliases: false,
+    ssl: true,
+  }
+);
 
 module.exports = {
   database: sequelize,
-  Sequelize: Sequelize
+  Sequelize: Sequelize,
 };

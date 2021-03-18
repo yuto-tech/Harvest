@@ -1,70 +1,81 @@
-html, body,
-ul, ol, li,
-h1, h2, h3, h4, h5, h6, p,
-form, input, div {
+html,
+body,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+input,
+div {
   margin: 0;
   padding: 0;
 }
 
-li{
+li {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-body{
-  font-family:"Hiragino Kaku Gothic ProN W3",sans-serif;
+body {
+  font-family: "Hiragino Kaku Gothic ProN W3", sans-serif;
 }
 
-header{
+header {
   height: 65px;
   background-color: #fff;
   color: #434a54;
   border-bottom: 1px solid #e3e4e8;
 }
 
-.headerInner{
+.headerInner {
   display: flex;
   flex: auto;
-  justify-content:space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
-  padding:16px 0 16px 4%;
+  padding: 16px 0 16px 4%;
   text-align: center;
   font-weight: 300;
 }
 
-.logo{
+.logo {
   font-size: 30px;
 }
 
-.he{
-  display:inline-block;
+.he {
+  display: inline-block;
 }
 
-.login{
+.login {
   color: #434a54;
   font-size: 16px;
 }
 
-.header-right{
+.header-right {
   padding-right: 10px;
 }
 
-.login:hover{
+.login:hover {
   color: red;
 }
 
-.foo01{
+.foo01 {
   display: flex;
   justify-content: center;
   text-align: center;
 }
 
 .choice {
-  width:140px;
-  font-size:18px;
+  width: 140px;
+  font-size: 18px;
   padding: 17px;
   line-height: 15px;
   border: 1px solid #e3e4e8;
@@ -72,9 +83,9 @@ header{
   color: #434a54;
 }
 
-.choice:hover{
+.choice:hover {
   background-color: #434a54;
-  color:#fff;
+  color: #fff;
   opacity: 0.8;
 }
 
@@ -82,34 +93,34 @@ header{
   border-right:none;
 }*/
 
-.choice1{
+.choice1 {
   background-color: #434a54;
-  color:#fff;
+  color: #fff;
   opacity: 0.8;
-  width:140px;
-  font-size:18px;
+  width: 140px;
+  font-size: 18px;
   padding: 17px;
   line-height: 15px;
   border-bottom: none;
   border: 1px solid #e3e4e8;
 }
 
-input,option{
+input,
+option {
   outline: none;
 }
 
-@media all and (max-width: 670px){
-
-  .re-choice{
+@media all and (max-width: 670px) {
+  .re-choice {
     position: fixed;
     bottom: 0;
     background-color: #434a54;
-    color:#fff;
+    color: #fff;
     opacity: 0.8;
     border: 1px solid #e3e4e8;
     width: 100%;
   }
-   aside{
-     display: none;
-   }
+  aside {
+    display: none;
+  }
 }
