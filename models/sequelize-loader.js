@@ -4,7 +4,9 @@ const sequelize = new Sequelize(
   process.env.DATABASE_URL || "postgres://postgres:postgres@localhost/web_app",
   {
     operatorsAliases: false,
-    ssl: true,
+    dialectOptions: {
+      ssl: true,
+    },
   }
 );
 
